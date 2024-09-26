@@ -1,0 +1,78 @@
+.app{
+	padding: 10px;
+	margin: 10px;
+}
+
+
+.header {
+ display: flex;
+ justify-content:space-between;
+ border: 3px solid black;
+}
+.nav-items>ul{
+	display: flex;
+	font-size: 24px;
+   }
+.nav-items>ul>li {
+  padding:10px;
+  margin:10px;
+}
+.search-box{
+	border-radius: 0.4cm;
+	width: 400px;
+	height: 30px;
+	padding: 10px;
+	margin: 10px;
+}
+.search-button{
+	background-color: aquamarine;
+	width: 100px;
+	height: 30px;
+	padding: 5px;
+	margin: 10px;
+}
+.logo{
+	
+	width: 100px;
+	height: 100px;
+}
+.restaurent-conatiner-row{
+	border: 1px solid white;
+	display: flex;
+	margin:15px;
+	padding:15px;
+	justify-content: center;
+}
+.restaurent-card{
+	border: 1px solid black;
+	margin:10px;
+	
+	width: 340px;
+	height: 380px;
+	border-radius:0.4cm;
+}
+.RC-image{
+	width: 340px;
+	height:289px;
+	border-radius:0.4cm;
+}
+.RC-name{
+	text-align:left;
+	padding:1px;
+	margin:1px;
+	
+	font-size: 21px;
+	font-family: Gilroy;
+    font-weight: 800;
+}
+
+.RC-info>ul{
+ display:flex;
+ padding:0px;
+}
+.RC-info>ul>li{
+	justify-content: left;
+
+	padding:3px;
+	   font-size: 20px;
+}
