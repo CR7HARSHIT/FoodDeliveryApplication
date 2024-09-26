@@ -36,21 +36,26 @@
 	width: 100px;
 	height: 100px;
 }
-.restaurent-conatiner-row{
-	border: 1px solid white;
-	display: flex;
-	margin:15px;
-	padding:15px;
-	justify-content: center;
-}
+
 .restaurent-card{
-	border: 1px solid black;
-	margin:10px;
+	
+	border: 1px solid wheat;
+	margin:5px;
 	
 	width: 340px;
-	height: 380px;
+	height: 480px;
 	border-radius:0.4cm;
+	
 }
+
+.restaurent-card:hover{
+  cursor:pointer;
+  
+	transform: scale(0.95) translateX(5px) translateY(0px); 
+	
+	
+  }
+
 .RC-image{
 	width: 340px;
 	height:289px;
@@ -66,13 +71,12 @@
     font-weight: 800;
 }
 
-.RC-info>ul{
- display:flex;
+.RC-info{
+ 
  padding:0px;
 }
-.RC-info>ul>li{
-	justify-content: left;
-
-	padding:3px;
-	   font-size: 20px;
+.restaurent-conatiner{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
