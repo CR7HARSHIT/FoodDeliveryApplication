@@ -1,6 +1,7 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
-
+import React from "react";
+import ReactDOM from "react-dom/client";
+import logoimg from "./assets/LOGO.jpg";
+import star from "./assets/staricon.png";
 
 const data= [
 	{
@@ -1019,7 +1020,7 @@ const data= [
 const Header = () => (
 	<div className="header">
       <div className="logo-container">
-		<img className="logo" src="https://media.istockphoto.com/id/1435983029/vector/food-delivery-logo-images.jpg?s=612x612&w=0&k=20&c=HXPxcjOxUiW4pMW1u9E0k2dJYQOU37a_0qZAy3so8fY="/>
+		<img className="logo" src={logoimg}/>
 	  </div>
 	  <div className="nav-items">
 		<ul type="none">
@@ -1040,9 +1041,10 @@ const RestaurentCard=(protos) =>(
 		
 		<h3>{protos.x1.info.name}</h3>
 		<span className="RC-info">
-		<h5>{protos.x1.info.cuisines.join(", ")}</h5>
-		<h5>Stars:{protos.x1.info.avgRating}</h5>
-		<h5>Delivery time:{protos.x1.info.sla.slaString} </h5>
+		
+		<h4><img className="star-image" src={star}/>{" "+protos.x1.info.avgRating} &bull; {protos.x1.info.sla.slaString}</h4>
+		<h4> </h4>
+		<h4 className="cuisine">{protos.x1.info.cuisines.join(", ")}</h4>
 		</span>
 	</div>
 )
@@ -1052,46 +1054,17 @@ const Body = () => (
 		<input className="search-box" type="text" placeholder="Search restaurent here"></input>
 		<button className="search-button">search</button>
 	 </div>
+	
 	 <div className="restaurent-conatiner">
-	   <RestaurentCard
-	      x1={data[0]}
-	   />
-	    <RestaurentCard
-	      x1={data[1]}
-	   />
-	    <RestaurentCard
-	      x1={data[2]}
-	   />
-	    <RestaurentCard
-	      x1={data[3]}
-	   />
-	    <RestaurentCard
-	      x1={data[4]}
-	   />
-	    <RestaurentCard
-	      x1={data[5]}
-	   />
-        <RestaurentCard
-	      x1={data[6]}
-	   />
-	    <RestaurentCard
-	      x1={data[7]}
-	   />
-	    <RestaurentCard
-	      x1={data[8]}
-	   />
-	    <RestaurentCard
-	      x1={data[9]}
-	   />
-	    <RestaurentCard
-	      x1={data[10]}
-	   />
-	    <RestaurentCard
-	      x1={data[11]}
-	   />
+      {data.map((value) => (
+        <RestaurentCard  x1={value} />
+      ))}
+   </div>
+
+	    
 
 		
-	 </div>
+	 
 	</div>
 )
 

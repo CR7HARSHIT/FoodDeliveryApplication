@@ -33,17 +33,17 @@
 }
 .logo{
 	
-	width: 100px;
-	height: 100px;
+	width: 140px;
+	height: 100%;
 }
 
 .restaurent-card{
 	
-	border: 1px solid wheat;
-	margin:5px;
+	border: 1px solid white;
+	margin:7px;
 	
 	width: 340px;
-	height: 480px;
+	height: 390px;
 	border-radius:0.4cm;
 	
 }
@@ -51,20 +51,27 @@
 .restaurent-card:hover{
   cursor:pointer;
   
-	transform: scale(0.95) translateX(5px) translateY(0px); 
+	transform: scale(0.95) translateX(5px) translateY(-1px); 
 	
 	
   }
-
+  h3{
+	margin:0px;
+  }
+  h4{
+	margin:0px;
+	display:flex;
+  }
 .RC-image{
 	width: 340px;
 	height:289px;
 	border-radius:0.4cm;
+	margin-bottom:0px;
+ padding:0px;
 }
 .RC-name{
 	text-align:left;
-	padding:1px;
-	margin:1px;
+	
 	
 	font-size: 21px;
 	font-family: Gilroy;
@@ -72,11 +79,20 @@
 }
 
 .RC-info{
- 
+ margin:0px;
  padding:0px;
 }
 .restaurent-conatiner{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	
+}
+.star-image{
+	width:16px;
+	height:16px;
+}
+.cuisine{
+	color: rgba(2, 2, 2, 0.6);
+	display: ;
 }
