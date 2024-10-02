@@ -7,10 +7,7 @@ const Filterbutton=({
 })=>{
     
 	const [btncolor,setbtncolor]=useState("white")
-    useEffect(()=>{
-		setbtncolor("orange")
-	},["Body"])
-
+  
 
 	const handleclick = () => {
 		{
