@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "\"This is a Food Delivery Application\"",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,8 @@
   },
   "homepage": "https://github.com/CR7HARSHIT/FoodDeliveryApplication#readme",
   "dependencies": {
+    "express": "^4.21.0",
+    "node-fetch": "^3.3.2",
     "parcel": "^2.12.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

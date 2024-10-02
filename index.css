@@ -6,6 +6,7 @@
 
 .header {
  display: flex;
+ flex-wrap: wrap;
  justify-content:space-between;
  border: 3px solid black;
 }
@@ -25,11 +26,18 @@
 	margin: 10px;
 }
 .search-button{
-	background-color: aquamarine;
 	width: 100px;
 	height: 30px;
 	padding: 5px;
-	margin: 10px;
+	margin: 4px;
+	border-radius: 10px;
+	
+	justify-content: flex-start;
+}
+.search-button:hover{
+	background-color: orange;
+	cursor: pointer;
+	transform: scale(0.95) translateX(5px) translateY(-1px); 
 }
 .logo{
 	
@@ -42,8 +50,8 @@
 	border: 1px solid white;
 	margin:7px;
 	
-	width: 340px;
-	height: 390px;
+	width: 250px;
+
 	border-radius:0.4cm;
 	
 }
@@ -63,8 +71,8 @@
 	display:flex;
   }
 .RC-image{
-	width: 340px;
-	height:289px;
+	width: 250px;
+	height:249px;
 	border-radius:0.4cm;
 	margin-bottom:0px;
  padding:0px;
@@ -85,7 +93,7 @@
 .restaurent-conatiner{
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: flex-start;
 	
 }
 .star-image{
@@ -94,5 +102,52 @@
 }
 .cuisine{
 	color: rgba(2, 2, 2, 0.6);
-	display: ;
+	
+}
+.Shimmer-divRcontainer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	
+}
+.Shimmer-div-RC{
+	
+	border: 1px solid  white;
+	margin:7px;
+	
+	width: 250px;
+	height:349px;
+
+	border-radius:0.4cm;
+}
+.Shimmer-div-RC-image{
+	width: 250px;
+	height:249px;
+	border-radius:0.4cm;
+	margin-bottom:0px;
+ padding:0px;
+ background-color: rgba(209, 206, 206, 0.621);
+}
+.fa-solid fa-magnifying-glass{
+	margin: 0px;
+	padding: 0px;
+}
+.filtering{
+	display: flex;
+	flex-wrap: wrap;
+	margin:6px ;
+	padding:6px ;
+}
+.filter{
+	margin:5px ;
+	padding:5px ;
+}
+.filter-btn{
+	height:45px;
+	border-radius: 15px;
+}
+.filter-btn:hover{
+	background-color: orange;
+	cursor: pointer;
+	transform: scale(0.95) translateX(5px) translateY(-1px); 
 }
