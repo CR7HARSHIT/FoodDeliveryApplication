@@ -1,7 +1,7 @@
 import CDNlinks from "../../utils/constants";
 import star from "../../assets/staricon.png";
 import { NAME } from "../../utils/constants";
-import json from "../../utils/data";
+
 const RestaurentCard=(protos) =>{
 	const {cloudinaryImageId,
 		name,

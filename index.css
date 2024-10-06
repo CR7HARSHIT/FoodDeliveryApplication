@@ -1,6 +1,6 @@
 .app{
-	padding: 10px;
-	margin: 10px;
+	padding: 20px;
+	margin: 20px;
 }
 
 
@@ -147,7 +147,7 @@
 	border-radius: 15px;
 }
 .filter-btn:hover{
-	background-color: orange;
+	background-color: red;
 	cursor: pointer;
 	transform: scale(0.95) translateX(5px) translateY(-1px); 
 }

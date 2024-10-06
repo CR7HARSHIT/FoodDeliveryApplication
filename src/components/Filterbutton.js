@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react"
 import { filterops } from "../../utils/constants"
 const Filterbutton=({
-	key,
+	
     x1,
 	corder
 })=>{
