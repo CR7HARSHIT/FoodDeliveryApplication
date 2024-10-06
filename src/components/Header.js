@@ -1,5 +1,7 @@
 import logoimg from "../../assets/LOGO.jpg";
 import { useState } from "../../node_modules/react";
+import { Link } from 'react-router-dom';
+
 const Header = () =>{ 
 	const [btnreact,setbtnreact]=useState("Login")
 
@@ -11,8 +13,8 @@ const Header = () =>{
 	  <div className="nav-items">
 		<ul type="none">
 			<li>Home</li>
-			<li>About us</li>
-			<li>Conatct us</li>
+			 <li><Link to="/about">About Us</Link></li> 
+			<li><Link to="/contact">Contact Us</Link></li>
 			<li>Cart</li>
 			<button onClick={
 				()=>{
