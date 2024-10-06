@@ -7,20 +7,12 @@ const Filterbutton=({
 })=>{
     
 	const [btncolor,setbtncolor]=useState("white")
-  
+    
 
 	const handleclick = () => {
 		{
 
-			const arr = [];
-			arr.push([x1,key]);
-		     
-			for (let i = 0; i < filterops.length; i++) {
-			  if (filterops[i][0] == x1) continue;
-			  arr.push([filterops[i][0],filterops[i][1]]);
-			}
-			console.log(arr)
-			corder(arr)
+           btncolor==="white"?setbtncolor("orange"):setbtncolor("white")
 		}
 	  };	
 

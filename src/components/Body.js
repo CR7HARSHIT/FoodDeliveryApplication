@@ -19,16 +19,17 @@ const Body = () =>{
 
 	  async	function fetchdata()
 	  { 
-		const url = encodeURIComponent('https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.95250&lng=75.71050&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
-      const proxyUrl = `https://api.allorigins.win/get?url=${url}`;
+	// 	const url = encodeURIComponent('https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.95250&lng=75.71050&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
+    //   const proxyUrl = `https://api.allorigins.win/get?url=${url}`;
 
-		console.log("fetch called")
-		let response=await fetch(proxyUrl+url);
-			console.log("fetch called responded")	
-		    let x=await response.json();
-			console.log(x.data?.cards[1].card.card?.gridElements)
+	// 	console.log("fetch called")
+	// 	let response=await fetch(proxyUrl+url);
+	// 		console.log("fetch called responded")	
+	// 	    let x=await response.json();
+	// 		console.log(x.data?.cards[1].card.card?.gridElements)
 			
-			setListofRestaurent(json.data?.cards[1].card.card?.gridElements.infoWithStyle.restaurants)	
+		setListofRestaurent(json.data?.cards[1].card.card?.gridElements.infoWithStyle.restaurants)	
+	      
 	  } 
 
 	   return( 
