@@ -3,6 +3,7 @@ import { useEffect,useState } from "react";
 import Shimmer from "./shimmer";
 import { filterops } from "../../utils/constants";
 import Filterbutton from "./Filterbutton";
+import { Link } from 'react-router-dom';
 const Body = () =>{
 	  const [ListofRestaurent,setListofRestaurent]=useState([]);
 	  const [textToSearch,settextToSearch]=useState("");
@@ -34,7 +35,7 @@ const Body = () =>{
 			}
 			
 			console.log(data); 
-			console.log(data?.data?.cards[1]?.card?.card?.gridElements)
+			console.log(data?.data?.cards[1]?.card?.card?.gridElements.infoWithStyle.restaurants)
 			setListofRestaurent(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle.restaurants); 
 		  }
 		  
@@ -67,7 +68,7 @@ const Body = () =>{
 	{ListofRestaurent.length===0 &&textToSearch.length!==0 ? <h3>No Results Found </h3>:
 	 ListofRestaurent.length===0 &&textToSearch.length===0 ? <Shimmer/>:
 	 <div className="restaurent-conatiner">
-      {ListofRestaurent.map((value) => (<RestaurentCard key={value.info.id} x1={value} corder={handlefilterorderchnage} />))}
+      {ListofRestaurent.map((value) => (<Link className="Link-RC"key={value.info.id} to={"/city/jaipur/"+(value?.info?.id)}><RestaurentCard  x1={value} corder={handlefilterorderchnage} /></Link>))}
    </div>}
      
 	</div>

@@ -8,7 +8,7 @@ import RestaurentCard from "./components/RestaurentCard";
 import Error from "./components/Error";
 import Aboutus from "./components/AboutUs";
 import Contact from "./components/Contact";
-
+import RestaurentMenu from "./components/RestaurentMenu";
 
 const AppLayout = () => (
 	<div className="app">
@@ -35,7 +35,12 @@ const appRouter=createBrowserRouter(
 		{
 			path:"/contact",
 			element:<Contact/>,
-		}]
+		},
+		{
+			path:"/city/jaipur/:rest-name-id",
+			element:<RestaurentMenu/>,
+		}
+	]
 
 		,errorElement:<Error/>}
 	]
