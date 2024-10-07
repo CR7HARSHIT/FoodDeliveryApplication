@@ -9,7 +9,7 @@ import Error from "./components/Error";
 import Aboutus from "./components/AboutUs";
 import Contact from "./components/Contact";
 import RestaurentMenu from "./components/RestaurentMenu";
-import Toggle from "./components/toggle";
+
 const AppLayout = () => (
 	<div className="app">
 		{console.log("AppLayout is working")}
