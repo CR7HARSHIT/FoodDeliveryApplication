@@ -155,3 +155,17 @@
 	text-decoration: none;
   color: inherit;
 }
+.Toggle-div{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin:40px ;
+	background-color: silver;
+}
+.Toggle-div:hover{
+	cursor: pointer;
+}
+.Toggle{
+	margin:40px ;
+	background-color: silver;
+}
