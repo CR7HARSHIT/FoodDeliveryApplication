@@ -9,7 +9,7 @@ import Error from "./components/Error";
 import Aboutus from "./components/AboutUs";
 import Contact from "./components/Contact";
 import RestaurentMenu from "./components/RestaurentMenu";
-
+import Login from "./components/Login";
 const AppLayout = () => (
 	<div className="app">
 		{console.log("AppLayout is working")}
@@ -21,13 +21,14 @@ const AppLayout = () => (
 const appRouter=createBrowserRouter(
 	[
 		{
+		path:"/",
+		element:<AppLayout/>,
+		children:
+	[
+		{
 			path:"/",
-			element:<AppLayout/>,
-		   children:[
-			{
-				path:"/",
-			element:<Body/>
-			},
+		    element:<Body/>
+		},
 		{
 			path:"/about",
 			element:<Aboutus/>,		
@@ -39,12 +40,20 @@ const appRouter=createBrowserRouter(
 		{
 			path:"/city/jaipur/:rest-name-id",
 			element:<RestaurentMenu/>,
-		}
+		},
+		
 		
 
 	]
 
-		,errorElement:<Error/>}
+		,errorElement:<Error/>},
+
+		{
+			path:"/login",
+			element:<Login/>,	
+			errorElement:<Error/>
+		}
+		
 	
 	]
 );

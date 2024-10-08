@@ -16,11 +16,11 @@ const Header = () =>{
 			 <li><Link to="/about">About Us</Link></li> 
 			<li><Link to="/contact">Contact Us</Link></li>
 			<li>Cart</li>
-			<button onClick={
+			<Link to="/login"><button onClick={
 				()=>{
                    btnreact === "Login"? setbtnreact("Logout"):setbtnreact("Login")
 				}
-			}>{btnreact}</button>
+			} >{btnreact}</button></Link>
 		</ul>
 	  </div>
 	</div>

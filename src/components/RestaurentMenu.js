@@ -66,8 +66,9 @@ const RestaurentMenu=()=>{
                      <Toggle arrobj={itemCards} heading={title}/>   
 				 ) : 
 				 
-				         
-					 (categories.map((obj)=>{
+				    <div className="catg">  
+						<h3 className="catg-heading">{title}</h3> 
+					 {(categories.map((obj)=>{
 						console.log(obj)
 						const {
 						   title,
@@ -76,7 +77,8 @@ const RestaurentMenu=()=>{
 						return (
 							<Toggle arrobj={itemCards} heading={title}/>   
 						)
-					}))
+					}))}
+					</div>
 		    }	
 		)
     }</div>
