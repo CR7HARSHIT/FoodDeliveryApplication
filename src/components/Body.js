@@ -6,6 +6,7 @@ import Filterbutton from "./Filterbutton";
 import { Link } from 'react-router-dom';
 const Body = () =>{
 	  const [ListofRestaurent,setListofRestaurent]=useState([]);
+	  const [listfordisplay,setlistfordisplay]=useState([])
 	  const [textToSearch,settextToSearch]=useState("");
 	  const [filterbtns,setfilterbtns]=useState(filterops);
 	  
@@ -49,9 +50,9 @@ const Body = () =>{
 		 
 		}} value={textToSearch}></input>
 		<button className="search-button" onClick={()=>{
-			const list=json.data?.cards[1].card.card?.gridElements.infoWithStyle.restaurants
+			const list=ListofRestaurent
 			const ans=list.filter((rc)=>(rc.info.name.toLocaleLowerCase().replace(/\s+/g, '').includes(textToSearch.toLocaleLowerCase().replace(/\s+/g, ''))))
-			textToSearch.length===0 ? setListofRestaurent(json.data?.cards[1].card.card?.gridElements.infoWithStyle.restaurants):setListofRestaurent(ans);
+			textToSearch.length===0 ? setlistfordisplay(ListofRestaurent):setlistfordisplay(ans);
 			
 		}}><i class="fa-solid fa-magnifying-glass"></i> <span> Search</span></button>
 	 </div>
@@ -68,7 +69,7 @@ const Body = () =>{
 	{ListofRestaurent.length===0 &&textToSearch.length!==0 ? <h3>No Results Found </h3>:
 	 ListofRestaurent.length===0 &&textToSearch.length===0 ? <Shimmer/>:
 	 <div className="restaurent-conatiner">
-      {ListofRestaurent.map((value) => (<Link className="Link-RC"key={value.info.id} to={"/city/jaipur/"+(value?.info?.id)}><RestaurentCard  x1={value} corder={handlefilterorderchnage} /></Link>))}
+      {listfordisplay.map((value) => (<Link className="Link-RC"key={value.info.id} to={"/city/jaipur/"+(value?.info?.id)}><RestaurentCard  x1={value} corder={handlefilterorderchnage} /></Link>))}
    </div>}
      
 	</div>
