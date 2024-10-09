@@ -45,8 +45,14 @@ const RestaurentMenu=()=>{
 	  totalRatingsString
 	 }=stvariable?.data?.cards[2]?.card?.card?.info;
 	 const x=resmenu[resmenu.length-1].groupedCard?.cardGroupMap?.REGULAR.cards
-	 let index = x.findIndex(item => item.card?.card?.title === "Recommended");
-	 let arr=x.slice(index,-2);
+
+	  let  index = (x.findIndex(item => item.card?.card?.title === "Top Picks"));
+	  let arr;
+	  if(index===-1){
+		 index =x.findIndex(item => item.card?.card?.title === "Recommended")
+         arr=x.slice(index,-2);
+	  }
+	 else  arr=x.slice(index+1,-2);
 	return(
 		<div className="rest-menu">
 			<h1>{name}</h1>

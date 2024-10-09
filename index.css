@@ -222,3 +222,7 @@ label {
   .lf-item{
 	margin: 20px;
   }
+  .usercard{
+	margin:30px;
+	border: 2px solid black;
+  }
