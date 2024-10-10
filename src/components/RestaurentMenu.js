@@ -69,7 +69,7 @@ const RestaurentMenu=()=>{
 					itemCards
 				 }=obj.card.card
                  return ( itemCards!== undefined) ? (
-                     <Toggle arrobj={itemCards} heading={title}/>   
+                     <Toggle key={title} arrobj={itemCards} heading={title}/>   
 				 ) : 
 				 
 				    <div className="catg">  
@@ -81,7 +81,7 @@ const RestaurentMenu=()=>{
 						   itemCards
 						}=obj
 						return (
-							<Toggle arrobj={itemCards} heading={title}/>   
+							<Toggle key={title} arrobj={itemCards} heading={title}/>   
 						)
 					}))}
 					</div>
@@ -91,4 +91,3 @@ const RestaurentMenu=()=>{
 )}
 export default RestaurentMenu;
 
-// PRICE:{"RS"+(finalPrice|| defaultPrice || price)/100}

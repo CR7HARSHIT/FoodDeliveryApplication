@@ -38,6 +38,7 @@ const Body = () =>{
 			console.log(data); 
 			console.log(data?.data?.cards[1]?.card?.card?.gridElements.infoWithStyle.restaurants)
 			setListofRestaurent(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle.restaurants); 
+			setlistfordisplay(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle.restaurants)
 		  }
 		  
 	  
