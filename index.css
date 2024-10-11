@@ -222,7 +222,69 @@ label {
   .lf-item{
 	margin: 20px;
   }
-  .usercard{
-	margin:30px;
-	border: 2px solid black;
-  }
+  
+  .developercard {
+    background-color: #f4f4f9; /* Light background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    max-width: 400px; /* Restrict width for a clean, card-like appearance */
+    margin: 20px auto;
+    text-align: center; /* Center content */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.developercard img {
+    width: 120px; /* Size of avatar image */
+    height: 120px;
+    border-radius: 50%; /* Circle image */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Space below the image */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add depth to the image */
+}
+
+.developercard h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Developer text uppercase */
+    letter-spacing: 2px; /* More spaced out text */
+}
+
+.developercard h3 {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0; /* Reduced margin between index and value */
+    display: flex;
+    justify-content: flex-start; /* Align label with value */
+}
+
+.developercard h3 span {
+    color: #1e90ff; /* Highlight the values in blue */
+    font-weight: bold;
+    margin-left: 5px; /* Reduced space between label and value */
+}
+
+.developercard h3 a {
+    text-decoration: none;
+    color: #1e90ff; /* Matching color for the link */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.developercard h3 a:hover {
+    color: #ff6347; /* Hover effect for the link */
+}
+
+.developercard .dc-span {
+    text-transform: capitalize; /* Capitalizes text (like names) */
+}
+
+.developercard {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling on hover */
+}
+
+.developercard:hover {
+    transform: scale(1.05); /* Slight scaling when hovered */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly larger shadow */
+}
+
