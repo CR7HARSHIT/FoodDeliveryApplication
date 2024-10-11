@@ -274,7 +274,9 @@ label {
 .developercard h3 a:hover {
     color: #ff6347; /* Hover effect for the link */
 }
-
+.developercard .bio {
+    text-align: left; /* Align bio text to the left */
+}
 .developercard .dc-span {
     text-transform: capitalize; /* Capitalizes text (like names) */
 }

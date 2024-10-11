@@ -42,7 +42,7 @@ class Developercardcls extends React.Component
 			<h3>Name:<span className="dc-span">{name}</span></h3>
 			<h3>Location:<span className="dc-span">{location}</span></h3>
 			<h3>Age:<span className="dc-span">{21}</span></h3>
-			<h3>Bio:<span className="dc-span">{bio}</span></h3>
+			<h3>Bio:<span className="dc-span bio">{bio}</span></h3>
 			<h3>CurrentHiringStatus:<span className="dc-span">{hireable=== true ? "Availabe For Hiring" : "Unknown" }</span></h3>
 			<h3>Twitter_ID:<span className="dc-span"><a href={"https://x.com/"+twitter_username}>{twitter_username}</a></span></h3>
 			<h3>Github_ID:<span className="dc-span"><a href={html_url}>{"CR7HARSHIT"}</a></span></h3>
