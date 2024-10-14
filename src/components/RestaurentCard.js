@@ -1,6 +1,6 @@
 import CDNlinks from "../../utils/constants";
 import star from "../../assets/staricon.png";
-import { NAME } from "../../utils/constants";
+
 
 const RestaurentCard=(protos) =>{
 	const {cloudinaryImageId,
@@ -10,7 +10,7 @@ const RestaurentCard=(protos) =>{
 		cuisines	
      }=protos.x1.info
 	 const Xrating="NEW"
-	console.log("Header rendered:::")
+	
 	return (<div className="restaurent-card">
 		
 		<img className="RC-image" src={CDNlinks+cloudinaryImageId} alt="RC-image"/>

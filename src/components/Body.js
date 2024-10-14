@@ -4,16 +4,23 @@ import Shimmer from "./shimmer";
 import { filterops } from "../../utils/constants";
 import Filterbutton from "./Filterbutton";
 import { Link } from 'react-router-dom';
+import useOnlineStatus from "../../utils/useOnlineStatus";
 const Body = () =>{
 	  const [ListofRestaurent,setListofRestaurent]=useState([]);
 	  const [listfordisplay,setlistfordisplay]=useState([])
 	  const [textToSearch,settextToSearch]=useState("");
 	  const [filterbtns,setfilterbtns]=useState(filterops);
-	  
+	  const status=useOnlineStatus();
 	   const handlefilterorderchnage=(neworder)=> {
 		setfilterbtns(neworder)
 	   }
-
+       if(status===false)
+	   {
+		  return (<>
+			       <h3>Loading error...</h3>
+			       <h3>Please Check internet Connection</h3>
+			      </>)
+	   }
 	  useEffect(()=>{	
 		fetchdata();
 	    },[])
@@ -26,11 +33,11 @@ const Body = () =>{
 			let data;
 			try {
 			  console.log("fetch called");
-			  let response = await fetch(proxyUrl);
+			  let response=await fetch(proxyUrl);
 			  console.log("fetch responded");
-			  let jsonData = await response.json();
+			  let jsonData=await response.json();
 			  // Since the data is wrapped by the proxy, we need to parse the actual contents
-			  data = JSON.parse(jsonData.contents);
+			  data=JSON.parse(jsonData.contents);
 			} catch (error) {
 			  console.log(error);
 			}
@@ -55,7 +62,7 @@ const Body = () =>{
 			const ans=list.filter((rc)=>(rc.info.name.toLocaleLowerCase().replace(/\s+/g, '').includes(textToSearch.toLocaleLowerCase().replace(/\s+/g, ''))))
 			textToSearch.length===0 ? setlistfordisplay(ListofRestaurent):setlistfordisplay(ans);
 			
-		}}><i class="fa-solid fa-magnifying-glass"></i> <span> Search</span></button>
+		}}><i className="fa-solid fa-magnifying-glass"></i> <span> Search</span></button>
 	 </div>
 	 <div className="filtering">
 		{filterbtns.map((btnname)=>{

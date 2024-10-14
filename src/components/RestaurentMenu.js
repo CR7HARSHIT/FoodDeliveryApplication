@@ -1,40 +1,21 @@
-import {useState,useEffect} from "react";
 import Shimmer from "./shimmer";
 import { useParams } from "react-router-dom";
 import Toggle from "./Toggle";
+import useFetchMenu from "../../utils/useFetchMenu";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 const RestaurentMenu=()=>{
 	const rest=useParams();
+	const status=useOnlineStatus();
 	const restid=rest['rest-name-id']
 	console.log(restid)
-     const [stvariable,setstvariable]=useState(null);
-	async function fetchdata() { 
-		
-   
-		const url=encodeURIComponent(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.95250&lng=75.71050&restaurantId=${restid}&catalog_qa=undefined&submitAction=ENTER`);
-		const proxyUrl = `https://api.allorigins.win/get?url=${url}`;
-	  
-		let dataobj;
-		try {
-		  console.log("fetch called");
-		  let response=await fetch(proxyUrl);
-		  console.log("fetch responded");
-		  let jsonData=await response.json();
-		  // Since the data is wrapped by the proxy, we need to parse the actual contents
-		  
-		  dataobj=JSON.parse(jsonData.contents);
-		} catch (error) {
-		  console.log(error);
-		}
-		
-		 setstvariable(dataobj)
-		 console.log(dataobj)
-	  }
-	 
-    useEffect(()=>{
-     fetchdata();
-	},[])
-
-
+	console.log(`statusofRM::${status}`)
+	if(status===false) return(
+		<>
+		<h3>Loading error...</h3>
+		<h3>Please Check internet Connection</h3>
+		{console.log(`Compoenet RM offline  page rendering finished`)}
+		</>)
+     const stvariable=useFetchMenu(restid);
      if(stvariable===null) return(<Shimmer/>)
      const resmenu=stvariable.data.cards;
 	 //[5]?.groupedCard?.cardGroupMap?.REGULAR.cards
@@ -50,9 +31,11 @@ const RestaurentMenu=()=>{
 	  let arr;
 	  if(index===-1){
 		 index =x.findIndex(item => item.card?.card?.title === "Recommended")
-         arr=x.slice(index,-2);
+		 if(index===-1) arr=x.slice(1,-2);
+         else arr=x.slice(index,-2);
 	  }
 	 else  arr=x.slice(index+1,-2);
+	 
 	return(
 		<div className="rest-menu">
 			<h1>{name}</h1>
@@ -69,19 +52,19 @@ const RestaurentMenu=()=>{
 					itemCards
 				 }=obj.card.card
                  return ( itemCards!== undefined) ? (
-                     <Toggle key={title} arrobj={itemCards} heading={title}/>   
+                     <Toggle key={title+"id"} arrobj={itemCards} heading={title}/>   
 				 ) : 
 				 
-				    <div className="catg">  
+				    <div className="catg" key={title}>  
 						<h3 className="catg-heading">{title}</h3> 
 					 {(categories.map((obj)=>{
-						console.log(obj)
+						// console.log(obj)
 						const {
 						   title,
 						   itemCards
 						}=obj
 						return (
-							<Toggle key={title} arrobj={itemCards} heading={title}/>   
+							<Toggle key={title+"id"} arrobj={itemCards} heading={title}/>   
 						)
 					}))}
 					</div>

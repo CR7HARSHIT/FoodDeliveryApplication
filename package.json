@@ -4,7 +4,9 @@
   "description": "\"This is a Food Delivery Application\"",
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "startdev":"parcel index.html --open --dist-dir dist"
   },
   "repository": {
     "type": "git",
