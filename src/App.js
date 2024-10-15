@@ -57,7 +57,21 @@ const appRouter=createBrowserRouter(
 	
 	]
 );
-const root=ReactDOM.createRoot(document.getElementById("root"))
 
+// Check if service workers are supported
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', () => {
+	  navigator.serviceWorker
+		.register(new URL('../serviceWorker.js', import.meta.url))  // New syntax
+		.then((registration) => {
+		  console.log('Service Worker registered:', registration);
+		})
+		.catch((error) => {
+		  console.error('Service Worker registration failed:', error);
+		});
+	});
+  }
+
+  const root=ReactDOM.createRoot(document.getElementById("root"))
 root.render(<RouterProvider router={appRouter}/>)
 

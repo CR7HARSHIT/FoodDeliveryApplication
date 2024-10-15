@@ -9,14 +9,15 @@ const RestaurentMenu=()=>{
 	const restid=rest['rest-name-id']
 	console.log(restid)
 	console.log(`statusofRM::${status}`)
-	if(status===false) return(
-		<>
-		<h3>Loading error...</h3>
-		<h3>Please Check internet Connection</h3>
-		{console.log(`Compoenet RM offline  page rendering finished`)}
-		</>)
-     const stvariable=useFetchMenu(restid);
+	
+     const stvariable=useFetchMenu(restid,status);
      if(stvariable===null) return(<Shimmer/>)
+		if(status===false) return(
+			<>
+			<h3>Loading error...</h3>
+			<h3>Please Check internet Connection</h3>
+			{console.log(`Compoenet RM offline  page rendering finished`)}
+			</>)
      const resmenu=stvariable.data.cards;
 	 //[5]?.groupedCard?.cardGroupMap?.REGULAR.cards
 	 const {name,

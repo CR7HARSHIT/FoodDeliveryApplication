@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const useOnlineStatus=()=>{
-    const [OnlineStatus,setOnlineStatus]=useState(true);
+    const [OnlineStatus,setOnlineStatus]=useState(navigator.onLine);
 	useEffect(()=>{
 		const handleOnline = () => {
 			console.log("Offline event listner triggered")

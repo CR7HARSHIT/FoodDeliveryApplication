@@ -4,7 +4,7 @@ const Error=()=>{
 	console.log(err)
 	return (
 		<div>
-			<h1>Errorpage</h1>
+			<h1>Errorpage hai bhai</h1>
 			<h3>{err.data}</h3>
 		</div>
 	)

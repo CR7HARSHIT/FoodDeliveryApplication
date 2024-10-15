@@ -1,55 +1,33 @@
 import RestaurentCard from "./RestaurentCard";
-import { useEffect,useState } from "react";
 import Shimmer from "./shimmer";
 import { filterops } from "../../utils/constants";
 import Filterbutton from "./Filterbutton";
 import { Link } from 'react-router-dom';
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import useFetchCards from "../../utils/useFetchCards";
+import { useState } from "../../node_modules/react";
+import { useEffect } from "react";
 const Body = () =>{
-	  const [ListofRestaurent,setListofRestaurent]=useState([]);
-	  const [listfordisplay,setlistfordisplay]=useState([])
+	const status=useOnlineStatus();
+	  const ListofRestaurent=useFetchCards(status);
+	  console.log(`listofRestaurent::${ListofRestaurent}`)
+	  const [listfordisplay,setlistfordisplay]=useState([]);
+	  console.log(`listofdisplay::${listfordisplay}`);
 	  const [textToSearch,settextToSearch]=useState("");
 	  const [filterbtns,setfilterbtns]=useState(filterops);
-	  const status=useOnlineStatus();
 	   const handlefilterorderchnage=(neworder)=> {
 		setfilterbtns(neworder)
 	   }
-       if(status===false)
-	   {
-		  return (<>
-			       <h3>Loading error...</h3>
-			       <h3>Please Check internet Connection</h3>
-			      </>)
-	   }
-	  useEffect(()=>{	
-		fetchdata();
-	    },[])
+	   useEffect(()=>{
+          setlistfordisplay(ListofRestaurent)
+	   },[ListofRestaurent])
 
-	  
-		async function fetchdata() { 
-			const url = encodeURIComponent('https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.95250&lng=75.71050&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
-			const proxyUrl = `https://api.allorigins.win/get?url=${url}`;
-		  
-			let data;
-			try {
-			  console.log("fetch called");
-			  let response=await fetch(proxyUrl);
-			  console.log("fetch responded");
-			  let jsonData=await response.json();
-			  // Since the data is wrapped by the proxy, we need to parse the actual contents
-			  data=JSON.parse(jsonData.contents);
-			} catch (error) {
-			  console.log(error);
-			}
-			
-			console.log(data); 
-			console.log(data?.data?.cards[1]?.card?.card?.gridElements.infoWithStyle.restaurants)
-			setListofRestaurent(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle.restaurants); 
-			setlistfordisplay(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle.restaurants)
-		  }
-		  
-	  
-
+	   if(status===false) return(
+		<>
+		<h3>Loading error...</h3>
+		<h3>Please Check internet Connection</h3>
+		{console.log(`Compoenet RM offline  page rendering finished`)}
+		</>)
 	   return( 
 	<div className="body">
      <div className="search-bar">
@@ -74,7 +52,7 @@ const Body = () =>{
 			  />)
 		})}
 	 </div>
-	{ListofRestaurent.length===0 &&textToSearch.length!==0 ? <h3>No Results Found </h3>:
+	{listfordisplay.length===0 &&textToSearch.length!==0 ? <h3>No Results Found </h3>:
 	 ListofRestaurent.length===0 &&textToSearch.length===0 ? <Shimmer/>:
 	 <div className="restaurent-conatiner">
       {listfordisplay.map((value) => (<Link className="Link-RC"key={value.info.id} to={"/city/jaipur/"+(value?.info?.id)}><RestaurentCard  x1={value} corder={handlefilterorderchnage} /></Link>))}

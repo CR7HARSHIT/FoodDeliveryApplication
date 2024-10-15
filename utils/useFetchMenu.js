@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-const useFetchMenu=(restid)=>{
+const useFetchMenu=(restid,status)=>{
   const [object,setobject]=useState(null)
   useEffect(()=>{
-   fetchdata()
-  },[])
+	if(status) fetchdata()
+  },[status])
   async function fetchdata() { 
 		
    
