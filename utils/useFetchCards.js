@@ -33,8 +33,18 @@ const useFetchCards=(status)=>{
 	// 		break;
 	// 	}
 	// }
-	console.log(data.data.cards[2].card.card.gridElements.infoWithStyle.restaurants)
-	 setFetchCardsArray(data.data.cards[2].card.card.gridElements.infoWithStyle.restaurants)
+	const cardsArray=data?.data?.cards
+	console.log(cardsArray)
+
+	for(let i=0;i<cardsArray.length;i++ )
+	{
+		const restaurantArray=cardsArray[i]?.card?.card?.gridElements?.infoWithStyle.restaurants
+		if(restaurantArray=== undefined) continue;
+		setFetchCardsArray(restaurantArray)
+		console.log(`${restaurantArray}${i}`)
+		break;
+	}
+	 
 	
   }
    return FetchCardsArray;
