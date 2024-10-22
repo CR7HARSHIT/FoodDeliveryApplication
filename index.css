@@ -61,7 +61,7 @@
   
 	transform: scale(0.95) translateX(5px) translateY(-1px); 
 	
-	
+	transition: transform 0.3s ease; 
   }
   h3{
 	margin:0px;
@@ -290,3 +290,35 @@ label {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly larger shadow */
 }
 
+.HocRc {
+	position: relative; /* Ensure that the parent has a relative position */
+  }
+  
+  /* Styles for the .top-pick label */
+  .top-pick {
+	position: absolute;
+	background-color: black;
+	color: white;
+	margin: 0 0.5rem 0.5rem 0.5rem; 
+	padding: 0.5rem; /* equivalent to p-2 */
+	border-radius: 0.5rem; /* equivalent to rounded-lg */
+	transition: transform 0.3s ease; 
+	z-index: 10; /* Bring the label above other elements */
+  }
+  
+  /* On hover of HocRc, transform the RestaurantCard */
+  .HocRc:hover .restaurant-card {
+	transform: scale(0.95) translateX(5px) translateY(-1px); /* Transform effect for RestaurantCard */
+  }
+  
+  /* On hover of HocRc, transform the .top-pick label */
+  .HocRc:hover .top-pick {
+	transform: scale(1.05); /* Transform effect for the label */
+  }
+  
+  /* Debugging hover effect on .top-pick directly */
+  .top-pick:hover {
+	transform: scale(1.1); /* Test effect directly on hover */
+	background-color: red; /* Change color to see if it's responding */
+  }
+  

@@ -1,4 +1,4 @@
-import RestaurentCard from "./RestaurentCard";
+import RestaurentCard,{AddToppick} from "./RestaurentCard";
 import Shimmer from "./shimmer";
 import { filterops } from "../../utils/constants";
 import Filterbutton from "./Filterbutton";
@@ -15,6 +15,7 @@ const Body = () =>{
 	  console.log(`listofdisplay::${listfordisplay}`);
 	  const [textToSearch,settextToSearch]=useState("");
 	  const [filterbtns,setfilterbtns]=useState(filterops);
+	  const HocofRc=AddToppick(RestaurentCard)
 	   const handlefilterorderchnage=(neworder)=> {
 		setfilterbtns(neworder)
 	   }
@@ -53,9 +54,9 @@ const Body = () =>{
 		})}
 	 </div>
 	{listfordisplay.length===0 &&textToSearch.length!==0 ? <h3>No Results Found </h3>:
-	 ListofRestaurent.length===0 &&textToSearch.length===0 ? <Shimmer/>:
+	 ListofRestaurent.length===0  ? <Shimmer/>:
 	 <div className="restaurent-conatiner">
-      {listfordisplay.map((value) => (<Link className="Link-RC"key={value.info.id} to={"/city/jaipur/"+(value?.info?.id)}><RestaurentCard  x1={value} corder={handlefilterorderchnage} /></Link>))}
+      {listfordisplay.map((value) => (<Link className="Link-RC"key={value.info.id} to={"/city/jaipur/"+(value?.info?.id)}> {(value?.info?.avgRating>4.4)?<HocofRc  x1={value} corder={handlefilterorderchnage}/> :<RestaurentCard  x1={value} corder={handlefilterorderchnage} />}</Link>))}
    </div>}
      
 	</div>

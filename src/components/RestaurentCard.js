@@ -1,7 +1,5 @@
 import CDNlinks from "../../utils/constants";
 import star from "../../assets/staricon.png";
-
-
 const RestaurentCard=(protos) =>{
 	const {cloudinaryImageId,
 		name,
@@ -25,3 +23,17 @@ const RestaurentCard=(protos) =>{
 	</div>)
 }
 export default RestaurentCard;
+
+export const AddToppick=(RestaurentCard)=>{
+
+	return (props)=>{
+
+		return (
+            <div className="HocRc">
+			<label className="top-pick">Top Pick</label>
+			<RestaurentCard {...props}/>
+			</div>
+		)
+	}
+
+}
