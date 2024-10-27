@@ -6,7 +6,7 @@
     "test": "jest",
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "startdev":"parcel index.html --open --dist-dir dist"
+    "startdev": "parcel index.html --open --dist-dir dist"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,8 @@
     "yup": "^1.4.0"
   },
   "devDependencies": {
-    "process": "^0.11.10"
+    "postcss": "^8.4.47",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.14"
   }
 }

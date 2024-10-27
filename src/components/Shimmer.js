@@ -1,70 +1,70 @@
 const Shimmer=()=> (
-<div className="Shimmer-divRcontainer">
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+<div className="flex flex-wrap">
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
-	<div className="Shimmer-div-RC">
-		<div className="Shimmer-div-RC-image"></div>
+	<div className="m-4 p-4 w-[275px] h-[400px] bg-shimmercolor rounded-lg">
+		<div className="m-4 p-4 w-[230px] h-[250px] bg-slate-600 rounded-lg"></div>
 	</div>
 </div>
 )

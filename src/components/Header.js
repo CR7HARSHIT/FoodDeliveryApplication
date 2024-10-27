@@ -7,18 +7,18 @@ const Header = () =>{
 	const [btnreact,setbtnreact]=useState("Login")
     const status=useOnlineStatus()
 	return(
-	<div className="header">
+	<div className="flex m-4 p-4 justify-between bg-white shadow-lg">
       <div className="logo-container">
-		<img className="logo" src={logoimg}/>
+		<img className="w-36" src={logoimg}/>
 	  </div>
-	  <div className="nav-items">
-		<ul type="none">
-			<li>OnlineStatus: {status ? "✅":"📵"}{console.log(`onlineStatusheader:${status}`)}</li>
-			<li><Link to="/">Home</Link></li>
-			 <li><Link to="/about">About Us</Link></li> 
-			<li><Link to="/contact">Contact Us</Link></li>
-			<li>Cart</li>
-			<Link to="/login"><button onClick={
+	  <div className="flex items-center">
+		<ul type="none" className="flex p-4 m-4 ">
+			<li className="m-3 px-4 ">OnlineStatus: {status ? "✅":"📵"}{console.log(`onlineStatusheader:${status}`)}</li>
+			<li className="m-3 px-4 hover:text-orange-500"><Link to="/">Home</Link></li>
+			 <li className="m-3 px-4 hover:text-orange-500"><Link to="/about">About Us</Link></li> 
+			<li className="m-3 px-4 hover:text-orange-500"><Link to="/contact">Contact Us</Link></li>
+			<li className="m-3 px-4 hover:text-orange-500">Cart</li>
+			<Link to="/login" className="m-3 px-4"><button className="  hover:text-orange-500 " onClick={
 				()=>{
                    btnreact === "Login"? setbtnreact("Logout"):setbtnreact("Login")
 				}

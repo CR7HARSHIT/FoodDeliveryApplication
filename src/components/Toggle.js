@@ -1,31 +1,47 @@
-import {useState} from "react";
+import Item from "./Item";
 const Toggle=(props)=>{
-    const [clickstatus,setclickstatus]=useState(false);
+    
 	const {
-		heading,
-		arrobj
+         id
+		,heading,
+		arrobj,
+		clickstatus,
+		openAK,
+		currentsv
+		
 	}=props
+	
 	return(
-	<div className="Toggle">
-      <div className="Toggle-div" onClick={()=>{
-		setclickstatus(!clickstatus);
+	
+	<div>
+      <div className="  mx-auto flex justify-between  " onClick={()=>{
+		// console.log(`${openAK},,,${id}`)
+		if(id===currentsv) openAK(null)
+		else openAK(id)
 	  }}>
-		<h4>{heading}({arrobj.length})</h4>
-        {(clickstatus)?<span> '▲' </span> : <span>'▼'</span>}
+		
+		<h4 className="font-semibold pb-5">{heading}({arrobj.length})</h4>
+       <div> {(clickstatus)?<span>  ∧</span> : <span>  ∨</span>}</div>
+	    
 	  </div>
+	  
+	 <div className="m-0 text-left" key={heading}>
 	  {
-		(clickstatus?
+		(clickstatus ?
 		 arrobj.map((obj)=>{
-            return(<div key={obj.card.info.id}>
-				 <h2>{obj.card.info.name}</h2>
-                 <h3>{obj.card.info.category}</h3>
-				 <h3>Rs={(obj.card.info.finalPrice||obj.card.info.defaultPrice || obj.card.info.price)/100}</h3>
-			</div>)
-		 })
+			const data=obj.card.info
+			
+            return(<><Item itemdata={data} /></>)
+		})
 		: null)
+		
 	  }
-	</div>
+	  
+	  </div>
+	  </div>
+	
 	  	  
+	
 	)
 }
 export default Toggle
