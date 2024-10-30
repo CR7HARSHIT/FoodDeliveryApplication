@@ -6,7 +6,18 @@ import { useSelector } from "react-redux";
 const Header = () =>{ 
 	const [btnreact,setbtnreact]=useState("Login")
     const status=useOnlineStatus()
-	const num=useSelector((store)=> store.cart.items.length)
+	let num=useSelector((store)=>
+		{ const arr=store.cart.items
+			console.dir(arr)
+			const resarr=arr.map((obj)=> obj.count)
+			let x=0;
+			for (let i = 0; i < resarr.length; i++) {
+				x += resarr[i];
+			}
+			return x; 
+		})
+    
+	console.log("num=",num)
 	return(
 	<div className="flex m-4 p-4 justify-between bg-white shadow-lg">
       <div className="logo-container">

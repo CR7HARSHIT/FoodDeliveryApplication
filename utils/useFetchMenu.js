@@ -2,20 +2,20 @@ import { useEffect, useState } from "react";
 const useFetchMenu=(restid,status)=>{
   const [object,setobject]=useState(null)
   useEffect(()=>{
-	
-	 fetchdata();
+	if(status)
+	 {fetchdata();}
   }
   ,[])
   async function fetchdata() { 
 		
    
 	const url=encodeURIComponent(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.95250&lng=75.71050&restaurantId=${restid}&catalog_qa=undefined&submitAction=ENTER`);
-	// const proxyUrl = `https://thingproxy.freeboard.io/fetch/${url}`;
+	 const proxyUrl = `https://thingproxy.freeboard.io/fetch/${url}`;
   
 	let dataobj;
 	try {
 	  console.log("fetch called");
-	  let response=await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.95250&lng=75.71050&restaurantId=${restid}&catalog_qa=undefined&submitAction=ENTER`);
+	  let response=await fetch(proxyUrl);
 	  console.log("fetch responded");
 	  console.log(response)
 	  let x=await response.json();
