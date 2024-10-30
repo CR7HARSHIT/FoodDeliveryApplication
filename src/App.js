@@ -9,14 +9,49 @@ import Aboutus from "./components/Aboutus";
 import Contact from "./components/Contact";
 import RestaurentMenu from "./components/RestaurentMenu";
 import Login from "./components/Login";
-const AppLayout = () => (
-	<div className="app">
-		{console.log("AppLayout is working")}
+import UserLocationContext from "../utils/UserLocationContext";
+import { useState,useEffect } from "react";
+import store from "./app/store";
+import { Provider } from "react-redux";
+import Cart from "./components/Cart"
+const AppLayout = () => {
+	const [location, setLocation] = useState({ latitude: null, longitude: null });
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        // Check if geolocation is supported
+        if (!navigator.geolocation) {
+            setError("Geolocation is not supported by your browser.");
+            return;
+        }
+
+        // Get the user's current position on initial render
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                setLocation({
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude
+                });
+            },
+            (err) => {
+                setError("Failed to retrieve location: " + err.message);
+            }, { enableHighAccuracy: true }
+        );
+    }, []); // Empty dependency array ensures it runs only once on mount
+   
+
+  return (	
+  <div className="app">
+	{console.log("AppLayout is working")}
+	 <Provider store={store}>
+	 <UserLocationContext.Provider value={location}>
      <Header/>
      <Outlet/>
 	 <Footer/>
-	</div>
-)
+	 </UserLocationContext.Provider>
+	 </Provider>
+	</div>)
+}
 const appRouter=createBrowserRouter(
 	[
 		{
@@ -39,7 +74,12 @@ const appRouter=createBrowserRouter(
 		{
 			path:"/city/jaipur/:rest-name-id",
 			element:<RestaurentMenu/>,
+			
 		},
+		{
+			path:"/cart",
+			element:<Cart/>
+		}
 		
 		
 

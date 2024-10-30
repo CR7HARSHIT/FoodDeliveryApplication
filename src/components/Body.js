@@ -3,11 +3,14 @@ import Shimmer from "./Shimmer";
 import { Link } from 'react-router-dom';
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import useFetchCards from "../../utils/useFetchCards";
-import { useState } from "../../node_modules/react";
-import { useEffect } from "react";
+import { useEffect,useState,useContext } from "react";
+import UserLocationContext from "../../utils/UserLocationContext";
+
 const Body = () =>{
 	const status=useOnlineStatus();
-	  const ListofRestaurent=useFetchCards(status);
+    const location=useContext(UserLocationContext);
+	  const ListofRestaurent=useFetchCards(status,location);
+    console.log()
 	  console.log(`listofRestaurent::${ListofRestaurent}`)
 	  const [listfordisplay,setlistfordisplay]=useState([]);
 	  console.log(`listofdisplay::${listfordisplay}`);

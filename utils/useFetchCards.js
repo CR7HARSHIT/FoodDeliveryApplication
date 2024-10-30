@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
-const useFetchCards=(status)=>{
-   const [FetchCardsArray,setFetchCardsArray]=useState([]);
-   useEffect(()=>{
-	if(status){
-		fetchdata();}
-	},[status])
 
+const useFetchCards=(status,location)=>{
+   const [FetchCardsArray,setFetchCardsArray]=useState([]);
+   const {latitude,longitude}=location;
+   console.log(`usefetchcards triggered`)
+   useEffect(()=>{
+	console.log(`la::${latitude},lo::${longitude}`)
+	   if(status && (latitude!==null))
+		{fetchdata()
+		}
+	},[status,location])
+   
    async function fetchdata() { 
-	const url=encodeURIComponent('https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.95250&lng=75.71050&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
-	const proxyUrl=`https://thingproxy.freeboard.io/fetch/${url}`;
+	const url=encodeURIComponent(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${latitude}&lng=${longitude}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`);
+		const proxyUrl=`https://thingproxy.freeboard.io/fetch/${url}`;
   
 	let data;
 	try {

@@ -4,7 +4,7 @@ const useOnlineStatus=()=>{
     const [OnlineStatus,setOnlineStatus]=useState(navigator.onLine);
 	useEffect(()=>{
 		const handleOnline = () => {
-			console.log("Offline event listner triggered")
+			console.log("Online event listner triggered")
 			setOnlineStatus(true);
 
 		}
