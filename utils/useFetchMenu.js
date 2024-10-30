@@ -15,7 +15,7 @@ const useFetchMenu=(restid,status)=>{
 	let dataobj;
 	try {
 	  console.log("fetch called");
-	  let response=await fetch(url);
+	  let response=await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.95250&lng=75.71050&restaurantId=${restid}&catalog_qa=undefined&submitAction=ENTER`);
 	  console.log("fetch responded");
 	  console.log(response)
 	  let x=await response.json();
