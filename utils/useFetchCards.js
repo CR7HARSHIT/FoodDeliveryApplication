@@ -6,19 +6,21 @@ const useFetchCards=(status,location)=>{
    console.log(`usefetchcards triggered`)
    useEffect(()=>{
 	console.log(`la::${latitude},lo::${longitude}`)
-	   if(status && (latitude!==null))
-		{fetchdata()
-		}
-	},[status,location])
+	
+		if(status && (latitude!==null))
+			{fetchdata()
+			}
+	  
+	},[location,status])
    
    async function fetchdata() { 
 	const url=encodeURIComponent(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${latitude}&lng=${longitude}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`);
-		const proxyUrl=`https://thingproxy.freeboard.io/fetch/${url}`;
+		// const proxyUrl=`https://thingproxy.freeboard.io/fetch/${url}`;
   
 	let data;
 	try {
 	  console.log("fetch called");
-	  let response=await fetch(proxyUrl);
+	  let response=await fetch(url);
 	  console.log("fetch responded");
 	  console.log(response)
 	  let x=await response.json();
