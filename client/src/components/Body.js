@@ -24,11 +24,13 @@ const Body = () =>{
 	   },[ListofRestaurent])
 
 	   if(status===false) return(
-		<>
-		<h3>Loading error...</h3>
+		<div className="h-[500px] text-center">
+    <div className="m-20 font-extrabold text-3xl">
+		<h3 >Loading error...</h3>
 		<h3>Please Check internet Connection</h3>
+    </div>
 		{console.log(`Compoenet RM offline  page rendering finished`)}
-		</>)
+		</div>)
 	   return( 
 	<div className="body">
      <div className="m-4 p-4 bg-isilver shadow-lg">

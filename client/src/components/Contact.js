@@ -1,13 +1,12 @@
-
 import Developercardcls from "./Developercardcls";
-const Aboutus=()=>{
+const Contact=()=>{
+
 	return (
 		<div>
-			<h1>Aboutus</h1>
+			
 			{/* <Usercardfn name={"Harshfn"} location={"Jaipur"} age={21} /> */}
 			<Developercardcls />
 		</div>
 	)
 }
-
- export default Aboutus;
+export default Contact;

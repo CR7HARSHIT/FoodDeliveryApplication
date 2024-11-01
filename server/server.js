@@ -1,8 +1,13 @@
 import express from 'express';
 import fetch from 'node-fetch';
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
+const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`; // Use BASE_URL from .env or default to localhost
 
 // CORS headers middleware
 app.use((req, res, next) => {
@@ -53,5 +58,5 @@ app.get('/proxy', async (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Proxy server running on http://localhost:${PORT}`);
+    console.log(`Proxy server running on ${BASE_URL}`);
 });
