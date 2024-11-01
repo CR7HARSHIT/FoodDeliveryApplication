@@ -41,7 +41,7 @@ const AppLayout = () => {
    
 
   return (	
-  <div className="app">
+  <div  className="">
 	{console.log("AppLayout is working")}
 	 <Provider store={store}>
 	 <UserLocationContext.Provider value={location}>
