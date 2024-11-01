@@ -33,19 +33,26 @@ const RestaurentMenu=()=>{
 	  locality
 	 }=stvariable?.data?.cards[2]?.card?.card?.info;
 	 const x=resmenu[resmenu.length-1].groupedCard?.cardGroupMap?.REGULAR.cards
+                   // Find indices for the specified item types
+				   console.log(`Issue satrt form HERE::::::${x}`)
+      let index1 = x.findIndex(item => item.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+      let index2 = x.findIndex(item => item.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory");
 
-	let  index1 = (x.findIndex(item => item.card?.card?.["@type"] ==("type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"))); 
-	let  index2 = (x.findIndex(item => item.card?.card?.["@type"] ==("type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory")));
-	if(index2===-1) index2=100    
-	const startIndex = Math.min(index1, index2);
-const endIndex = Math.max(startIndex + 1, x.length - 1); // Ensuring at least one element is included
+      // If index2 is not found, set it to a high value to avoid issues
+      if (index2 === -1) index2 = 100;
 
-if (x.length <= 2) {
-    // Handle the case where there are not enough elements
-    arr = x.slice(0); // Take a copy of the whole array or handle differently
-} else {
-    arr = x.slice(startIndex, endIndex - 2); // Ensures proper slicing
-}
+      // Ensure both indices are valid
+      if (index1 === -1) index1 = 0; // Fallback if index1 is not found
+
+      // Validate that x is an array and has enough elements
+      if (Array.isArray(x) && x.length > 2) {
+      // Use the smaller index as the start index for slicing
+      const startIndex = Math.min(index1, index2);
+      arr = x.slice(startIndex, -2); // Slicing to exclude the last two elements
+     } else {
+      // Handle cases where x is too short or not an array
+      arr = []; // or assign an appropriate default value or error handling
+    }
 
 	 
 	return(
