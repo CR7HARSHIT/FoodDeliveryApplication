@@ -60,7 +60,7 @@ const Body = () =>{
 	{listfordisplay.length===0 &&textToSearch.length!==0 ? <h3>No Results Found </h3>:
 	 ListofRestaurent.length===0  ? <Shimmer/>:
 	 <div className="flex flex-wrap">
-      {listfordisplay.map((value) => (<Link className="Link-RC"key={value.info.id} to={"/city/jaipur/"+(value?.info?.id)}> {(value?.info?.avgRating>4.4)?<HocofRc  x1={value} corder={handlefilterorderchnage}/> :<RestaurentCard  x1={value} corder={handlefilterorderchnage} />}</Link>))}
+      {listfordisplay.map((value) => (<Link className="Link-RC"key={value.info.id} to={"/city/"+(value?.info?.id)}> {(value?.info?.avgRating>4.4)?<HocofRc  x1={value} corder={handlefilterorderchnage}/> :<RestaurentCard  x1={value} corder={handlefilterorderchnage} />}</Link>))}
    </div>}
 	</div>
   )};

@@ -72,7 +72,7 @@ const appRouter=createBrowserRouter(
 			element:<Contact/>,
 		},
 		{
-			path:"/city/jaipur/:rest-name-id",
+			path:"/city/:rest-name-id",
 			element:<RestaurentMenu/>,
 			
 		},
