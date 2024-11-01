@@ -15,7 +15,7 @@ const useFetchCards=(status,location)=>{
    
    async function fetchdata() { 
 	const url = encodeURIComponent(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${latitude}&lng=${longitude}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`);
-    const proxyUrl = `http://localhost:3001/proxy?url=${url}`;
+    const proxyUrl = `${process.env.REACT_APP_BASE_URL}/proxy?url=${url}`;
   
     let data;
     try {

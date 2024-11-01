@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-const useFetchMenu=(restid,status)=>{
+const useFetchMenu=(restid,status,location)=>{
   const [object,setobject]=useState(null)
+  const {latitude,longitude}=location;
   useEffect(()=>{
 	if(status)
 	 {fetchdata();}
@@ -9,9 +10,8 @@ const useFetchMenu=(restid,status)=>{
   async function fetchdata() { 
 		
    
-	const url=encodeURIComponent(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.95250&lng=75.71050&restaurantId=${restid}&catalog_qa=undefined&submitAction=ENTER`);
-	 const proxyUrl = `http://localhost:3001/proxy?url=${url}`;
-  
+	const url=encodeURIComponent(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=${latitude}&lng=${longitude}&restaurantId=${restid}&catalog_qa=undefined&submitAction=ENTER`);
+	const proxyUrl = `${process.env.REACT_APP_BASE_URL}/proxy?url=${url}`;
 	let dataobj;
 	try {
 	  console.log("fetch called");

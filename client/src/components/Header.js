@@ -1,4 +1,4 @@
-import logoimg from "../../assets/LOGO.jpg";
+import logoimg from "../../assets/LOGO.jpeg";
 import { useState } from "../../node_modules/react";
 import { Link } from 'react-router-dom';
 import useOnlineStatus from "../../utils/useOnlineStatus";
@@ -23,9 +23,9 @@ const Header = () =>{
 	console.log("num=",num)
 	return(
 		
-		<div className="flex justify-between items-center p-4 bg-white shadow-md border-b border-gray-300">
-    <div className="logo-container">
-        <img className="w-36" src={logoimg} alt="Khana Le Lo Logo" />
+		<div className="flex justify-between items-center p-4 bg-white shadow-md border-b border-gray-300 ">
+    <div className="logo-container ">
+        <img className="w-40 h-auto" src={logoimg} alt="Khana Le Lo Logo" />
     </div>
 
     <div className="flex-grow">

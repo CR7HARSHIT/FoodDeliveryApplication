@@ -4,16 +4,18 @@ import Toggle from "./Toggle";
 import useFetchMenu from "../../utils/useFetchMenu";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import star from "../../assets/staricon.png";
-import { useState } from "react";
+import { useState,useContext } from "react";
+import UserLocationContext from "../../utils/UserLocationContext";
 const RestaurentMenu=()=>{
 	const [AKopen,setAKopen]=useState(null);
 	const rest=useParams();
+	const location=useContext(UserLocationContext);
 	const status=useOnlineStatus();
 	const restid=rest['rest-name-id']
 	console.log(restid)
 	console.log(`statusofRM::${status}`)
 	
-     const stvariable=useFetchMenu(restid,status);
+     const stvariable=useFetchMenu(restid,status,location);
      if(stvariable===null) return(<Shimmer/>)
 		if(status===false) return(
 			<>
