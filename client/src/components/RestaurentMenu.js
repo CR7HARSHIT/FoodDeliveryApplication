@@ -37,7 +37,16 @@ const RestaurentMenu=()=>{
 	let  index1 = (x.findIndex(item => item.card?.card?.["@type"] ==("type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"))); 
 	let  index2 = (x.findIndex(item => item.card?.card?.["@type"] ==("type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory")));
 	if(index2===-1) index2=100    
-	arr=x.slice((index1<index2 ? index1:index2),-2);
+	const startIndex = Math.min(index1, index2);
+const endIndex = Math.max(startIndex + 1, x.length - 1); // Ensuring at least one element is included
+
+if (x.length <= 2) {
+    // Handle the case where there are not enough elements
+    arr = x.slice(0); // Take a copy of the whole array or handle differently
+} else {
+    arr = x.slice(startIndex, endIndex - 2); // Ensures proper slicing
+}
+
 	 
 	return(
 		<div>
