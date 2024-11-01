@@ -37,7 +37,7 @@ const RestaurentMenu=()=>{
 				   console.log(`Issue satrt form HERE::::::${x}`)
       let index1 = x.findIndex(item => item.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
       let index2 = x.findIndex(item => item.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory");
-
+      let arr=null // declared arr
       // If index2 is not found, set it to a high value to avoid issues
       if (index2 === -1) index2 = 100;
 
