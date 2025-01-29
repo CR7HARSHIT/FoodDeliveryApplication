@@ -10,7 +10,7 @@ const useFetchMenu=(restid,status,location)=>{
   async function fetchdata() { 
 		
    
-	const url=encodeURIComponent(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=${latitude}&lng=${longitude}&restaurantId=${restid}&catalog_qa=undefined&submitAction=ENTER`);
+	const url=encodeURIComponent(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.9124336&lng=75.7872709&restaurantId=${restid}&catalog_qa=undefined&submitAction=ENTER`);
 	const proxyUrl = `${process.env.REACT_APP_BASE_URL}/proxy?url=${url}`;
 	let dataobj;
 	try {
